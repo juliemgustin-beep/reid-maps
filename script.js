@@ -1,28 +1,33 @@
 const destinations = [
+  { name: "OpenAI", address: "1455 3rd St, San Francisco, CA 94158", category: "Work" },
   { name: "Home", address: "1141 Payne Drive Los Altos, CA 94024", category: "Homes" },
   { name: "Tahoe", address: "497 Tahoe Keys Blvd, South Lake Tahoe, CA 96150", category: "Homes" },
-  { name: "Mom", address: "19626 Vineyard Ln, Saratoga, CA 95070", category: "Homes" },
-  { name: "Eddie", address: "1612 Duvall Dr, San Jose, CA 95130", category: "Homes" },
   { name: "Lower", address: "477 Fremont Ave, Los Altos, CA 94024", category: "Schools" },
   { name: "Middle", address: "327 Fremont Ave, Los Altos, CA 94024", category: "Schools" },
   { name: "Upper", address: "26800 Fremont Rd, Los Altos Hills, CA 94022", category: "Schools" },
-  { name: "Fabian", address: "3750 Fabian Way, Palo Alto, CA 94303", category: "Schools" },
   { name: "Fremont Hills Club", address: "12889 Viscaino Pl, Los Altos Hills, CA 94022", category: "Sports" },
   { name: "Grant Park", address: "1575 Holt Ave, Los Altos, CA 94024", category: "Sports" },
   { name: "Fabian", address: "1575 Holt Ave, Los Altos, CA 94024", category: "Sports" },
   { name: "Chase", address: "1 Warriors Way, San Francisco, CA 94158", category: "Sports" },
+  { name: "PALY Football Field", address: "Palo Alto, CA 94306", category: "Sports" },
   { name: "Encina", address: "49 Wells Avenue, 3rd Floor, Palo Alto, CA 94301", category: "Doctors" },
   { name: "Smilecraft", address: "787 E El Camino Real, Sunnyvale, CA 94087", category: "Doctors" },
   { name: "Pediatrian", address: "842 Altos Oaks Dr, Los Altos, CA 94024", category: "Doctors" },
   { name: "Kids' Dentist", address: "1704 Miramonte Ave #9, Mountain View, CA 94040", category: "Doctors" },
-  { name: "Urgent Care Mountain View", address: "701 E El Camino Real 2nd floor, Mountain View, CA 94040", category: "Doctors" },
+  { name: "Urgent Care MTV", address: "701 E El Camino Real 2nd floor, Mountain View, CA 94040", category: "Doctors" },
   { name: "Trader Joes", address: "2310 Homestead Rd, Los Altos, CA 94024", category: "Stores" },
   { name: "Target", address: "555 Showers Dr, Mountain View, CA 94040", category: "Stores" },
   { name: "Costco", address: "1000 N Rengstorff Ave #143c, Mountain View, CA 94043", category: "Stores" },
   { name: "Stanford Mall", address: "660 Stanford Shopping Center, Palo Alto, CA 94304", category: "Stores" },
   { name: "Downtown Los Altos", address: "288 1st St, Los Altos, CA 94022", category: "Stores" },
-  { name: "Stewart", address: "288 Liebre Ct, Sunnyvale, CA 94086", category: "Friends" },
-  { name: "Aman", address: "1586 Holt Ave, Los Altos, CA 94024", category: "Friends" },
+  { name: "Andronicos", address: "690 Fremont Ave, Los Altos, CA 94024", category: "Stores" },
+  { name: "Home Depot", address: "680 Kifer Rd, Sunnyvale, CA 94086", category: "Stores" },
+  { name: "Lowes", address: "811 E Arques Ave, Sunnyvale, CA 94085", category: "Stores" },
+  { name: "Anna", address: "19626 Vineyard Ln, Saratoga, CA 95070", category: "Friends and Family" },
+  { name: "Eddie", address: "1612 Duvall Dr, San Jose, CA 95130", category: "Friends and Family" },
+  { name: "Stewart", address: "288 Liebre Ct, Sunnyvale, CA 94086", category: "Friends and Family" },
+  { name: "Aman", address: "1586 Holt Ave, Los Altos, CA 94024", category: "Friends and Family" },
+  { name: "Clayton", address: "Mountain View, CA 94040", category: "Friends and Family" },
 ];
 
 const icons = {
@@ -69,7 +74,7 @@ const icons = {
       <path d="M6.5 4.5h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2z" />
     </svg>
   `,
-  Friends: `
+  "Friends and Family": `
     <svg viewBox="0 0 24 24" focusable="false">
       <circle cx="12" cy="8" r="3.5" />
       <path d="M5.5 19a6.5 6.5 0 0 1 13 0" />
