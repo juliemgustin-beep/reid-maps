@@ -30,7 +30,7 @@ const destinations = [
   { key: "clayton", name: "Clayton", category: "Friends and Family" },
 ];
 
-const icons = {
+const categoryIcons = {
   Homes: `
     <svg viewBox="0 0 24 24" focusable="false">
       <path d="M3 10.5 12 3l9 7.5" />
@@ -69,15 +69,68 @@ const icons = {
   `,
   Doctors: `
     <svg viewBox="0 0 24 24" focusable="false">
-      <path d="M12 4.5v15" />
-      <path d="M4.5 12h15" />
-      <path d="M6.5 4.5h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2z" />
+      <path d="M7 4.5v5a4.5 4.5 0 0 0 9 0v-5" />
+      <path d="M5.5 4.5H7" />
+      <path d="M16 4.5h1.5" />
+      <path d="M11.5 14v1.5a4 4 0 0 0 8 0V14" />
+      <circle cx="19.5" cy="12.5" r="1.6" />
     </svg>
   `,
   "Friends and Family": `
     <svg viewBox="0 0 24 24" focusable="false">
       <circle cx="12" cy="8" r="3.5" />
       <path d="M5.5 19a6.5 6.5 0 0 1 13 0" />
+    </svg>
+  `,
+};
+
+const destinationIcons = {
+  "fremont-hills-club": `
+    <svg viewBox="0 0 24 24" focusable="false">
+      <path d="M7 20V5" />
+      <path d="M7 5h8l-1.5 2L15 9H7" />
+      <path d="M4.5 20h9" />
+      <path d="M15.5 18.5h3" />
+      <circle cx="18.5" cy="18.5" r="1" />
+    </svg>
+  `,
+  "grant-park": `
+    <svg viewBox="0 0 24 24" focusable="false">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 3.5l3.5 5-3.5 2.8-3.5-2.8z" />
+      <path d="M8.5 8.5 4.4 11" />
+      <path d="M15.5 8.5 19.6 11" />
+      <path d="M8.7 15.8 7.3 20" />
+      <path d="M15.3 15.8 16.7 20" />
+      <path d="m8.7 15.8 3.3-4.5 3.3 4.5z" />
+    </svg>
+  `,
+  fabian: `
+    <svg viewBox="0 0 24 24" focusable="false">
+      <path d="M4 7.5h16v9H4z" />
+      <path d="M7 7.5v9" />
+      <path d="M17 7.5v9" />
+      <path d="M11 10h2v4h-2z" />
+      <path d="M4 12h3" />
+      <path d="M17 12h3" />
+    </svg>
+  `,
+  chase: `
+    <svg viewBox="0 0 24 24" focusable="false">
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 3.5a14 14 0 0 1 0 17" />
+      <path d="M12 3.5a14 14 0 0 0 0 17" />
+      <path d="M5.5 7.5c2.2 1.4 4.4 2.1 6.5 2.1s4.3-.7 6.5-2.1" />
+      <path d="M5.5 16.5c2.2-1.4 4.4-2.1 6.5-2.1s4.3.7 6.5 2.1" />
+    </svg>
+  `,
+  "paly-football-field": `
+    <svg viewBox="0 0 24 24" focusable="false">
+      <path d="M5 6.5h14v11H5z" />
+      <path d="M8 6.5v11" />
+      <path d="M16 6.5v11" />
+      <path d="M5 12h14" />
+      <path d="M11 10.5h2v3h-2z" />
     </svg>
   `,
 };
@@ -116,7 +169,8 @@ Object.entries(groupedDestinations).forEach(([group, places]) => {
   const grid = groupFragment.querySelector(".button-grid");
 
   title.textContent = group;
-  groupIcon.innerHTML = icons[group] || "";
+  section.dataset.category = group;
+  groupIcon.innerHTML = categoryIcons[group] || "";
   toggle.setAttribute("aria-label", `Toggle ${group} destinations`);
 
   toggle.addEventListener("click", () => toggleGroup(section, toggle));
@@ -128,7 +182,7 @@ Object.entries(groupedDestinations).forEach(([group, places]) => {
     const nameText = buttonFragment.querySelector(".destination-name");
 
     nameText.textContent = name;
-    icon.innerHTML = icons[group] || "";
+    icon.innerHTML = destinationIcons[key] || categoryIcons[group] || "";
     link.href = buildDirectionsUrl(key);
     link.setAttribute("aria-label", `Open Google Maps directions to ${name}`);
 
